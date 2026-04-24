@@ -8,7 +8,7 @@ int main(void)
 
 	do {
 		double withdraw_amount;
-		std::cout << "enter withdrawal amount: ";
+		std::cout << "enter withdrawal amount (0000 to quit): ";
 		std::cin >> withdraw_amount;
 
 		if(withdraw_amount == 0000)
