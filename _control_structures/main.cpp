@@ -6,8 +6,9 @@ int main(void)
 	std::cout << "enter account balance: ";
 	std::cin >> account_balance;
 
+	double withdraw_amount;
+
 	do {
-		double withdraw_amount;
 		std::cout << "enter withdrawal amount (0 to quit): ";
 		std::cin >> withdraw_amount;
 
@@ -35,7 +36,7 @@ int main(void)
 			
 			if(account_balance == 0) break;
 		} 
-	} while(true);
+	} while(withdraw_amount != 0);
 }
 
 
