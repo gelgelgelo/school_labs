@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main(void)
@@ -123,4 +124,49 @@ int main(void)
 		week_counter++;
 	}
 
+
+	weekly_sales = 0;
+	int weekly_highest_sale = INT_MIN;
+	int weekly_lowest_sale = INT_MAX;	
+	for(int i = 0; i < week; i++)
+	{
+		for(int j = 0; j < day; j++)
+		{ 
+			weekly_sales += sales_data[i][j];
+		}
+
+		if(weekly_sales > weekly_highest_sale) 
+		{
+			weekly_highest_sale = weekly_sales;
+		}
+
+		if(weekly_sales < weekly_lowest_sale) 
+		{
+			weekly_lowest_sale = weekly_sales;
+		}
+		weekly_sales = 0;
+	}
+
+	weekly_sales = 0;
+	week_counter = 1;
+	for(int i = 0; i < week; i++)
+	{
+		for(int j = 0; j < day; j++)
+		{ 
+			weekly_sales += sales_data[i][j];
+		}
+		
+		if(weekly_sales == weekly_highest_sale) 
+		{
+			cout << "highest weekly sales, week " << week_counter << ": " << weekly_highest_sale << endl;
+		}
+
+		if(weekly_sales == weekly_lowest_sale) 
+		{
+			cout << "lowest weekly sales, week " << week_counter << ": " << weekly_lowest_sale << endl;
+		}
+
+		week_counter++;
+		weekly_sales = 0;
+	}
 }
