@@ -3,8 +3,16 @@ using namespace std;
 
 int main(void)
 {
-	int day;
-	int week;
+
+	/*
+		NOTE
+		
+		this activity was given before functions were taught to us
+		so i specifically didnt use functions to not "cheat" the learning
+		process thats why the code is not modular and cramped in main.
+	*/
+	int day = 0;
+	int week = 0;
 
 	int day_counter = 1;
 	int week_counter = 1;
@@ -14,5 +22,105 @@ int main(void)
 	cout << "enter number of days per week > ";
 	cin >> day;
 
-}
+	int sales_data[week][day] = {};
 
+
+	for(int i = 0; i < week; i++)
+	{
+		for(int j = 0; j < day; j++)
+		{ 
+			cout << "week " << week_counter << " day " << day_counter << " > ";
+			cin >> sales_data[i][j];
+			day_counter++;
+		}
+		week_counter++;
+		day_counter = 1;
+	}
+
+
+	int weekly_sales = 0;
+	week_counter = 1;
+	for(int i = 0; i < week; i++)
+	{
+		for(int j = 0; j < day; j++)
+		{ 
+			weekly_sales += sales_data[i][j];
+		}
+		cout << "week " << week_counter << " sales: " << weekly_sales << endl;
+		week_counter++;
+		weekly_sales = 0;
+	}
+
+
+	int daily_sales = 0;
+	day_counter = 1;
+	for(int i = 0; i < day; i++) 
+	{
+		for(int j = 0; j < week; j++)
+		{
+			daily_sales += sales_data[j][i];
+		}
+		cout << "day " << day_counter << " total sales per week: " << daily_sales << endl;
+		daily_sales = 0;
+		day_counter++;
+	}
+
+
+	int total_weekly_sales = 0;
+	for(int i = 0; i < week; i++)
+	{
+		for(int j = 0; j < day; j++)
+		{ 
+			total_weekly_sales += sales_data[i][j];
+		}
+	}
+	cout << "total weekly sales: " << total_weekly_sales << endl;
+
+
+	int sales_data_size = week * day;
+	int sales_average = total_weekly_sales / sales_data_size;
+	cout << "average sales: " << sales_average << endl;
+	
+
+	int highest_sale = sales_data[0][0];
+	int lowest_sale = sales_data[0][0];	
+	for(int i = 0; i < week; i++)
+	{
+		for(int j = 0; j < day; j++)
+		{
+			if(sales_data[i][j] > highest_sale) 
+			{
+				highest_sale = sales_data[i][j];
+			}
+
+			if(sales_data[i][j] < lowest_sale) 
+			{
+				lowest_sale = sales_data[i][j];
+			}
+		}
+	}
+
+	week_counter = 1;
+	day_counter = 1;
+	for(int i = 0; i < week; i++)
+	{
+		for(int j = 0; j < day; j++)
+		{
+			if(sales_data[i][j] == highest_sale) 
+			{
+				cout << "highest sale, week " << week_counter << " day " << day_counter << ": " << highest_sale << endl;
+				break;
+			}
+
+			if(sales_data[i][j] == lowest_sale) 
+			{
+				cout << "lowest sale, week " << week_counter << " day " << day_counter << ": " << lowest_sale << endl;
+				break;
+			}
+			day_counter++;
+		}
+		day_counter = 1;
+		week_counter++;
+	}
+
+}
