@@ -15,7 +15,14 @@ alternatively, you can review my code by switching to the `devel` branch.
 git checkout devel  
 ```  
 
+## Usage  
 
+you should progress through these labs in this order:  
+	`control_structures`  
+	`arrays`  
+	`functions`  
+	`strings`  
+	`pointers`  
 
-
+once you are done with a specific lab for example `arrays` prefix it with `"_"` this means you completed that lab.  
  
