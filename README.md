@@ -24,5 +24,5 @@ you should progress through these labs in this order:
 	`strings`  
 	`pointers`  
 
-once you are done with a specific lab for example `arrays` prefix it with `"_"` this means you completed that lab.  
+once you are done with a specific lab for example `arrays` prefix it with `_` then it will look like this `_arrays` this means you finished/completed that lab.  
  
