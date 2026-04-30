@@ -1,6 +1,8 @@
 #include <iostream>
 #include <climits>
+#include <iomanip>
 using namespace std;
+
 
 int main(void)
 {
@@ -39,6 +41,7 @@ int main(void)
 	}
 
 
+	cout << endl << "total sales per week" << endl;
 	int weekly_sales = 0;
 	week_counter = 1;
 	for(int i = 0; i < week; i++)
@@ -53,6 +56,7 @@ int main(void)
 	}
 
 
+	cout << endl << "total sales per day" << endl;	
 	int daily_sales = 0;
 	day_counter = 1;
 	for(int i = 0; i < day; i++) 
@@ -67,6 +71,7 @@ int main(void)
 	}
 
 
+	cout << endl << "total sales of all week" << endl;
 	int total_weekly_sales = 0;
 	for(int i = 0; i < week; i++)
 	{
@@ -78,6 +83,7 @@ int main(void)
 	cout << "total weekly sales: " << total_weekly_sales << endl;
 
 
+	cout << endl << "average sales" << endl;
 	int sales_data_size = week * day;
 	int sales_average = total_weekly_sales / sales_data_size;
 	cout << "average sales: " << sales_average << endl;
@@ -101,6 +107,7 @@ int main(void)
 		}
 	}
 
+	cout << endl << "highest and lowest sale and its week and day" << endl;
 	week_counter = 1;
 	day_counter = 1;
 	for(int i = 0; i < week; i++)
@@ -147,6 +154,7 @@ int main(void)
 		weekly_sales = 0;
 	}
 
+	cout << endl << "highest and lowest sale week" << endl;
 	weekly_sales = 0;
 	week_counter = 1;
 	for(int i = 0; i < week; i++)
@@ -169,4 +177,26 @@ int main(void)
 		week_counter++;
 		weekly_sales = 0;
 	}
+
+	
+	cout << endl << "sales table" << endl;
+	week_counter = 1;
+	day_counter = 0;
+	for(int j = 0; j < day + 1; j++)
+	{
+		cout << setfill(' ') << setw(12) << "day " << day_counter;
+		day_counter++;
+	}
+	cout << endl;
+	for(int i = 0; i < week; i++)
+	{		
+		cout << setfill(' ') << setw(12) << "week " << week_counter;	
+		week_counter++;
+		for(int j = 0; j < day; j++)
+		{
+			cout << setfill(' ') << setw(12) << sales_data[i][j];
+		}
+		cout << endl;
+	}
+	
 }
