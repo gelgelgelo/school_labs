@@ -184,7 +184,14 @@ int main(void)
 	day_counter = 0;
 	for(int j = 0; j < day + 1; j++)
 	{
-		cout << setfill(' ') << setw(12) << "day " << day_counter;
+		if(j == 0)
+		{
+			cout << setfill(' ') << setw(12) << " ";
+		}
+		else 
+		{
+			cout << setfill(' ') << setw(12) << "day " << day_counter;
+		}
 		day_counter++;
 	}
 	cout << endl;
@@ -198,5 +205,32 @@ int main(void)
 		}
 		cout << endl;
 	}
-	
+
+		
+	cout << endl << "reverse sales table" << endl;
+	week_counter = week;
+	day_counter = day;
+	for(int j = day + 1; j > 0 ; j--)
+	{
+		if(j == day + 1)
+		{
+			cout << setfill(' ') << setw(12) << " ";
+		}
+		else 
+		{
+			cout << setfill(' ') << setw(12) << "day " << day_counter + 1;
+		}
+		day_counter--;
+	}
+	cout << endl;
+	for(int i = week - 1; i >= 0; i--)
+	{		
+		cout << setfill(' ') << setw(12) << "week " << week_counter;	
+		week_counter--;
+		for(int j = day - 1; j >= 0; j--)
+		{
+			cout << setfill(' ') << setw(12) << sales_data[i][j];
+		}
+		cout << endl;
+	}
 }
