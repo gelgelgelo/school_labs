@@ -9,7 +9,7 @@ int main(void)
 
 	/*
 		NOTE
-		
+
 		this activity was given before functions were taught to us
 		so i specifically didnt use functions to not "cheat" the learning
 		process thats why the code is not modular and cramped in main.
@@ -25,13 +25,14 @@ int main(void)
 	cout << "enter number of days per week > ";
 	cin >> day;
 
-	int sales_data[week][day] = {};
+	// because there is approx 52 weeks in a year and 7 days in a week.
+	int sales_data[52][7] = {};
 
 
 	for(int i = 0; i < week; i++)
 	{
 		for(int j = 0; j < day; j++)
-		{ 
+		{
 			cout << "week " << week_counter << " day " << day_counter << " > ";
 			cin >> sales_data[i][j];
 			day_counter++;
@@ -47,7 +48,7 @@ int main(void)
 	for(int i = 0; i < week; i++)
 	{
 		for(int j = 0; j < day; j++)
-		{ 
+		{
 			weekly_sales += sales_data[i][j];
 		}
 		cout << "week " << week_counter << " sales: " << weekly_sales << endl;
@@ -56,10 +57,10 @@ int main(void)
 	}
 
 
-	cout << endl << "total sales per day" << endl;	
+	cout << endl << "total sales per day" << endl;
 	int daily_sales = 0;
 	day_counter = 1;
-	for(int i = 0; i < day; i++) 
+	for(int i = 0; i < day; i++)
 	{
 		for(int j = 0; j < week; j++)
 		{
@@ -76,7 +77,7 @@ int main(void)
 	for(int i = 0; i < week; i++)
 	{
 		for(int j = 0; j < day; j++)
-		{ 
+		{
 			total_weekly_sales += sales_data[i][j];
 		}
 	}
@@ -87,20 +88,20 @@ int main(void)
 	int sales_data_size = week * day;
 	int sales_average = total_weekly_sales / sales_data_size;
 	cout << "average sales: " << sales_average << endl;
-	
+
 
 	int highest_sale = sales_data[0][0];
-	int lowest_sale = sales_data[0][0];	
+	int lowest_sale = sales_data[0][0];
 	for(int i = 0; i < week; i++)
 	{
 		for(int j = 0; j < day; j++)
 		{
-			if(sales_data[i][j] > highest_sale) 
+			if(sales_data[i][j] > highest_sale)
 			{
 				highest_sale = sales_data[i][j];
 			}
 
-			if(sales_data[i][j] < lowest_sale) 
+			if(sales_data[i][j] < lowest_sale)
 			{
 				lowest_sale = sales_data[i][j];
 			}
@@ -114,13 +115,13 @@ int main(void)
 	{
 		for(int j = 0; j < day; j++)
 		{
-			if(sales_data[i][j] == highest_sale) 
+			if(sales_data[i][j] == highest_sale)
 			{
 				cout << "highest sale, week " << week_counter << " day " << day_counter << ": " << highest_sale << endl;
 				break;
 			}
 
-			if(sales_data[i][j] == lowest_sale) 
+			if(sales_data[i][j] == lowest_sale)
 			{
 				cout << "lowest sale, week " << week_counter << " day " << day_counter << ": " << lowest_sale << endl;
 				break;
@@ -134,20 +135,20 @@ int main(void)
 
 	weekly_sales = 0;
 	int weekly_highest_sale = INT_MIN;
-	int weekly_lowest_sale = INT_MAX;	
+	int weekly_lowest_sale = INT_MAX;
 	for(int i = 0; i < week; i++)
 	{
 		for(int j = 0; j < day; j++)
-		{ 
+		{
 			weekly_sales += sales_data[i][j];
 		}
 
-		if(weekly_sales > weekly_highest_sale) 
+		if(weekly_sales > weekly_highest_sale)
 		{
 			weekly_highest_sale = weekly_sales;
 		}
 
-		if(weekly_sales < weekly_lowest_sale) 
+		if(weekly_sales < weekly_lowest_sale)
 		{
 			weekly_lowest_sale = weekly_sales;
 		}
@@ -160,16 +161,16 @@ int main(void)
 	for(int i = 0; i < week; i++)
 	{
 		for(int j = 0; j < day; j++)
-		{ 
+		{
 			weekly_sales += sales_data[i][j];
 		}
-		
-		if(weekly_sales == weekly_highest_sale) 
+
+		if(weekly_sales == weekly_highest_sale)
 		{
 			cout << "highest weekly sales, week " << week_counter << ": " << weekly_highest_sale << endl;
 		}
 
-		if(weekly_sales == weekly_lowest_sale) 
+		if(weekly_sales == weekly_lowest_sale)
 		{
 			cout << "lowest weekly sales, week " << week_counter << ": " << weekly_lowest_sale << endl;
 		}
@@ -178,7 +179,7 @@ int main(void)
 		weekly_sales = 0;
 	}
 
-	
+
 	cout << endl << "sales table" << endl;
 	week_counter = 1;
 	day_counter = 0;
@@ -188,7 +189,7 @@ int main(void)
 		{
 			cout << setfill(' ') << setw(12) << " ";
 		}
-		else 
+		else
 		{
 			cout << setfill(' ') << setw(12) << "day " << day_counter;
 		}
@@ -196,8 +197,8 @@ int main(void)
 	}
 	cout << endl;
 	for(int i = 0; i < week; i++)
-	{		
-		cout << setfill(' ') << setw(12) << "week " << week_counter;	
+	{
+		cout << setfill(' ') << setw(12) << "week " << week_counter;
 		week_counter++;
 		for(int j = 0; j < day; j++)
 		{
@@ -206,7 +207,7 @@ int main(void)
 		cout << endl;
 	}
 
-		
+
 	cout << endl << "reverse sales table" << endl;
 	week_counter = week;
 	day_counter = day;
@@ -216,7 +217,7 @@ int main(void)
 		{
 			cout << setfill(' ') << setw(12) << " ";
 		}
-		else 
+		else
 		{
 			cout << setfill(' ') << setw(12) << "day " << day_counter + 1;
 		}
@@ -224,8 +225,8 @@ int main(void)
 	}
 	cout << endl;
 	for(int i = week - 1; i >= 0; i--)
-	{		
-		cout << setfill(' ') << setw(12) << "week " << week_counter;	
+	{
+		cout << setfill(' ') << setw(12) << "week " << week_counter;
 		week_counter--;
 		for(int j = day - 1; j >= 0; j--)
 		{
