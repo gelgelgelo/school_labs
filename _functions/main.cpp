@@ -2,16 +2,12 @@
 
 int GetGCD(int a, int b)
 {
-	while(a != b)
+	int tmp = 0;
+	while(b != 0)
 	{
-		if(a > b)
-		{
-			a -= b;
-		}
-		else
-		{
-			b -= a;
-		}
+		tmp = b;
+		b = a % b;
+		a = tmp;
 	}	
 	return a;
 }
