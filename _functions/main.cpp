@@ -32,7 +32,11 @@ int main()
 		if(std::cin.fail() || a < 0 || b < 0) 
 		{
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cin.ignore
+			(
+				std::numeric_limits<std::streamsize>::max(), 
+				'\n'
+			);
 			std::cout << "err: invalid input detected.\n"; 
 			continue;
 		}
@@ -45,8 +49,8 @@ int main()
 	int LCM = GetLCM(a, b);
 	int GCD = GetGCD(a, b);
 
-	std::cout << "GCD of " << a << " and " << b << " is: " << GCD << std::endl;
-	std::cout << "LCM of " << a << " and " << b << " is: " << LCM << std::endl;
+	std::cout << "GCD of " << a << " and " << b << " is: " << GCD << "\n";
+	std::cout << "LCM of " << a << " and " << b << " is: " << LCM << "\n";
 	std::cout << "Common Divisors of " << a << " and " << b << " is: ";
 	for(int i = 1; i < GCD + 1; i++)
 	{
