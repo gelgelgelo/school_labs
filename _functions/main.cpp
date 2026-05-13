@@ -24,6 +24,11 @@ int main()
 	std::cin >> a;
 	std::cout << "Enter the second number: ";
 	std::cin >> b;
+	if(a < 0 || b < 0) 
+	{
+		std::cout << "err: negative number detected.\n"; 
+		return 0;
+	}
 	int LCM = GetLCM(a, b);
 	int GCD = GetGCD(a, b);
 
@@ -34,7 +39,15 @@ int main()
 	{
 		if(GCD % i == 0) 
 		{
-			std::cout << i << ",";
+			if(i == GCD)
+			{
+				std::cout << i;
+			}
+			
+			else
+			{
+				std::cout << i << ",";
+			}
 		}
 	}
 	std::cout << std::endl;
