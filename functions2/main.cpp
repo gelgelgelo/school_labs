@@ -80,29 +80,13 @@ int inputInt(std::string prompt)
 	return input;
 }
 
-void getStudentName(students &data)
+void getStudentData(students &data)
 {
-	// im so proud of this lmao, its like the python `input()` function.
+	// lmao my input is like python but typed.
 	data.name.push_back(inputStr("enter student name: "));	
-}
-
-void getStudentQuiz(students &data)
-{
 	data.quiz.push_back(inputInt("enter student quiz(25%): "));
-}
-
-void getStudentAct(students &data)
-{
 	data.act.push_back(inputInt("enter student activity(20%): "));
-}
-
-void getStudentLab(students &data)
-{
 	data.lab.push_back(inputInt("enter student laboratory(25%): "));
-}
-
-void getStudentExam(students &data)
-{
 	data.exam.push_back(inputInt("enter student exam(30%): "));
 }
 
@@ -123,6 +107,4 @@ int main()
 	students data;
 	
 	printMenu();	
-	char input = 'a';
-		
 }
