@@ -107,4 +107,5 @@ int main()
 	students data;
 	
 	printMenu();	
+	// todo: work on the menu
 }
