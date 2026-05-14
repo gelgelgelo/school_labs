@@ -16,5 +16,9 @@ if you want to do these labs on your own you can switch to the `base` branch by 
 git checkout base  
 ```  
 
+## Note  
+
+i did this lab without AI assistance, but i did get help from forums like stackoverflow, reddit, wikipedia, and etc. if you would like to work on this labs too i highly recommend doing it without AI assistance.    
+
 
 
