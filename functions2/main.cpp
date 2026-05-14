@@ -16,31 +16,14 @@ std::string inputStr(std::string prompt)
 {
 	std::string input;
 	bool isValid = 0;
-	while(!isValid)	
-	{
+	while(!isValid)	{
 		std::cout << prompt;
 		std::getline(std::cin, input);
 
-		if(input.empty())
-		{
+		if(input.empty()) {
 			std::cout << "err: no input provided try again.\n";	
 			continue;
-		}
-
-		if(std::cin.fail())
-		{
-			std::cin.clear();
-			std::cin.ignore
-			(
-				std::numeric_limits<std::streamsize>::max(), 
-				'\n'
-			);
-			std::cout << "err: invalid input detected.\n";
-			continue;
-		}
-		
-		else
-		{
+		} else {
 			isValid = 1;
 		}
 	}
@@ -49,10 +32,7 @@ std::string inputStr(std::string prompt)
 
 int inputInt(std::string prompt)
 {
-/*
-	i didnt put that much effort to handling errors since im more focused
-	on actually solving the problem.
-*/
+	// todo: add a validation for empty input
 	int input;
 	bool isValid = 0;
 	while(!isValid)	
@@ -60,8 +40,7 @@ int inputInt(std::string prompt)
 		std::cout << prompt;
 		std::cin >> input;
 
-		if(std::cin.fail())
-		{
+		if(std::cin.fail()) {
 			std::cin.clear();
 			std::cin.ignore
 			(
@@ -70,10 +49,7 @@ int inputInt(std::string prompt)
 			);
 			std::cout << "err: invalid input detected.\n";
 			continue;
-		}
-		
-		else
-		{
+		} else {
 			isValid = 1;
 		}
 	}
@@ -82,7 +58,6 @@ int inputInt(std::string prompt)
 
 void getStudentData(students &data)
 {
-	// lmao my input is like python but typed.
 	data.name.push_back(inputStr("enter student name: "));	
 	data.quiz.push_back(inputInt("enter student quiz(25%): "));
 	data.act.push_back(inputInt("enter student activity(20%): "));
@@ -90,9 +65,30 @@ void getStudentData(students &data)
 	data.exam.push_back(inputInt("enter student exam(30%): "));
 }
 
+void displayStudents(students &data)
+{
+	std::cout << "\n";
+	for(unsigned int i = 0; i < data.name.size(); i++) {
+		std::cout << "name: " << data.name.at(i) << "\n";
+		std::cout << "quiz: " << data.quiz.at(i) << "\n";
+		std::cout << "activity: " << data.act.at(i) << "\n";
+		std::cout << "laboratory: " << data.lab.at(i) << "\n";
+		std::cout << "exam: " << data.exam.at(i) << "\n";
+	}
+}
+
+void displayTopAndLow()
+{
+	std::cout << "displaying highest and lowest\n";
+}
+
+void sortStudentGrade()
+{
+	std::cout << "sorting students grade\n";
+}
+
 void printMenu()
 {
-	// bruh i suck at ux and ui
 	using namespace std;
 	cout << "\n";
 	cout << "[a] input student data\n";
@@ -100,12 +96,10 @@ void printMenu()
 	cout << "[c] display top and lowest\n";
 	cout << "[d] sort student grade(ascending)\n";
 	cout << "[e] exit\n\n";
+	cout << "enter input (a/b/c/d/e): ";
 }
 
 int main()
 {
 	students data;
-	
-	printMenu();	
-	// todo: work on the menu
 }
