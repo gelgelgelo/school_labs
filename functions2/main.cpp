@@ -13,7 +13,8 @@ struct Student {
 
 double getAve(const Student &s)
 {
-	return (s.quiz * 0.25) + (s.act * 0.20) + (s.lab * 0.25) + (s.exam * 0.30); }
+	return (s.quiz * 0.25) + (s.act * 0.20) + (s.lab * 0.25) + (s.exam * 0.30); 
+}
 
 void displayStudents(std::vector<Student> &data)
 {
