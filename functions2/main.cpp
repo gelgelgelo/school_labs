@@ -5,10 +5,10 @@
 
 struct Student {
 	std::string name;
-	int quiz;
-	int act;
-	int lab;
-	int exam;
+	double quiz;
+	double act;
+	double lab;
+	double exam;
 };
 
 double getAve(const Student &s)
