@@ -70,4 +70,6 @@ int main()
 	displayHiandLo(sorted);
 	displayStudents(sData);
 	displayStudents(sorted);
+
+	// todo: add input with super duper strict input validation.
 }
